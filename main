@@ -1,0 +1,15 @@
+private void SeedFill(int x, int y)
+    {
+        // Recursive call guard conditions
+        if (x < 0 || x >= N || y < 0 || y >= M) return;
+        if (canvas.GetPixel(x, y) != oldColor) return;
+
+        // Set the pixel to the fill color
+        canvas.SetPixel(x, y, fillColor);
+
+        // Recurse for neighboring pixels
+        SeedFill(x + 1, y);
+        SeedFill(x - 1, y);
+        SeedFill(x, y + 1);
+        SeedFill(x, y - 1);
+    }
