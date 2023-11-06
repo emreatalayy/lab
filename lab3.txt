@@ -1,19 +1,11 @@
-    private void SeedFill(int x, int y)
-        {
-            if (IsInPolygon(new Point(x,y)))
-                return;
+private void SeedFill(int x, int y)
+{
+    if (x >= N || y >= M || matrix[y, x] != 0) return;
+    graphic.FillRectangle(new SolidBrush(selPen.Color), x, y, 1, 1);
+    matrix[y, x] = 1;
 
-            if (matrix[y, x] == 0)
-            {
-                // İlgili rengi boyama işlemi (Örnek olarak siyah renk kullanıldı, isteğine göre değiştirebilirsin)
-                graphic.DrawEllipse(selPen, x, y, 1, 1);
-
-                matrix[y, x] = 1;
-
-                // Komşuları kontrol et ve recursive olarak çağır
-                SeedFill(x - 1, y); // Sol
-                SeedFill(x + 1, y); // Sağ
-                SeedFill(x, y - 1); // Yukarı
-                SeedFill(x, y + 1); // Aşağı
-            }
-        }
+    SeedFill(x + 1, y);
+    SeedFill(x- 1, y);
+    SeedFill(x, y + 1);
+    SeedFill(x, y - 1);
+}
