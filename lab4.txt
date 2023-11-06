@@ -1,0 +1,18 @@
+
+
+        //private void SeedFill()
+        //{
+        //    while (yigin.Count > 0)
+        //    {
+        //        Point currentPoint = (Point)yigin.Pop();
+
+        //        // İlgili renge boyama işlemi
+        //        graphic.DrawEllipse(selPen, currentPoint.X, currentPoint.Y, 1, 1);
+
+        //        // Komşuları kontrol et ve yığına ekle
+        //        CheckAndPushNeighbor(currentPoint.X - 1, currentPoint.Y); // Sol
+        //        CheckAndPushNeighbor(currentPoint.X + 1, currentPoint.Y); // Sağ
+        //        CheckAndPushNeighbor(currentPoint.X, currentPoint.Y - 1); // Yukarı
+        //        CheckAndPushNeighbor(currentPoint.X, currentPoint.Y + 1); // Aşağı
+        //    }
+        //}
